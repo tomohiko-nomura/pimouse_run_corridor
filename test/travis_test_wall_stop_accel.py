@@ -10,10 +10,10 @@ class WallStopAccelTest(unittest.TestCase):
 
         time.sleep(0.3)
 
-        with open("/dev/rtmotor_raw_l0","r") as lf,\
-             open("/dev/rtmotor_raw_r0","r") as rf:
-            left = int(lf.readline().rstrip())
-            right = int(rf.readline().rstrip())
+        with open("/dev/rtmotor_raw_l0","r") as lfh,\
+             open("/dev/rtmotor_raw_r0","r") as rfh:
+            left = int(lfh.readline().rstrip())
+            right = int(rfh.readline().rstrip())
 
         return left, right
 
