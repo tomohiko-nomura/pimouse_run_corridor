@@ -30,7 +30,7 @@ class WallTrace():
         while not rospy.is_shutdown():
             data.linear.x += accel
 
-            if self.sensor_values.sum_all > 50:
+            if self.sensor_values.sum_all >= 50:
                 data.linear.x = 0
             elif data.linear.x <= 0.2:
                 data.linear.x = 0.2
